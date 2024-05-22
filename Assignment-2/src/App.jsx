@@ -33,7 +33,14 @@ const alphabets = [
 function App() {
   const [OutputString, setOutputString] = useState("");
   const HandleOutputString = (alphabet) => {
-    console.log(alphabet);
+    setOutputString(OutputString + alphabet);
+    if (OutputString.length >= 2) {
+      const SlicedString = OutputString.slice(-2);
+      if (SlicedString[0] === alphabet && SlicedString[1] === alphabet) {
+        return console.log("found");
+        // setOutputString("_");
+      }
+    }
   };
   return (
     <div className="max-w-7xl mx-auto ">
@@ -51,7 +58,7 @@ function App() {
         className="text-2xl font-semibold text-purple-400
       "
       >
-        OutputString:
+        OutputString: {OutputString}
       </div>
     </div>
   );
