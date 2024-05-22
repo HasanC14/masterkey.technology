@@ -37,8 +37,7 @@ function App() {
     if (OutputString.length >= 2) {
       const SlicedString = OutputString.slice(-2);
       if (SlicedString[0] === alphabet && SlicedString[1] === alphabet) {
-        return console.log("found");
-        // setOutputString("_");
+        return setOutputString(OutputString.slice(0, -2) + "_");
       }
     }
   };
